@@ -1,0 +1,187 @@
+/* Global varible */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&family=Ubuntu:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+:root {
+  --font1: "Bricolage Grotesque", sans-serif;
+  /* --head-font: "Merriweather", serif; */
+  --head-font:'Poppins', sans-serif;
+  --bdr-radius: 20px;
+  --bdr-radius-lite:10px;
+  --red-col: red;
+  --bg-col: #262a2e;
+  --border-col: black;
+  --tag1: rgb(62, 162, 215);
+  --cream-bg:#dfdedee4;
+  --white-bg:white;
+  --yellow-bg-linear:linear-gradient(to left top,rgb(227, 107, 27), #ffaa00, #ecdf8c);
+  --yellow: rgb(245, 219, 50);
+  --blue-col-linear:linear-gradient(to bottom right,rgb(124, 223, 238),rgb(27, 178, 233),rgb(9, 123, 222));
+}
+/* Heading related util */
+.font1 {
+  font-family: var(--font1);
+  font-weight: 400;
+}
+.heading {
+  font-size: 2.5rem;
+  font-family: var(--head-font);
+  font-weight: bold;
+}
+.heading_max{
+  font-size: 3rem;
+  font-family: var(--head-font);
+  font-weight: bold;
+}
+.heading_lite{
+  font-weight: lighter;
+  font-style: italic;
+}
+.normal-heading {
+  font-family: var(--head-font);
+  font-size: 1.5rem;
+}
+/* Line-height */
+.line{
+  height: 2px;
+  background-color: black;
+}
+.line-height {
+  line-height: 1.5;
+}
+/* Button section  */
+.btnss {
+  background-color: red;
+  color: black;
+  border-radius: 20px;
+  padding: 12px;
+  font-family:sans-serif;
+}
+.btns1 {
+  margin: 1rem;
+  color: black;
+  border-radius:var(--bdr-radius);
+  padding:10px 10px;
+  font-family:sans-serif;
+}
+.style_box{
+  border-radius: var(--bdr-radius) var(--bdr-radius) 0px var(--bdr-radius);
+}
+.style_box1{
+  border-radius: var(--bdr-radius) 0px 0px 0px;
+}
+/* flex-center */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flexbox-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flexbox-even{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.flexbox-around{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.flexbox-start{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.centered{
+  text-align: center;
+}
+/* Image inside container  */
+.icon:hover{
+  scale: 1.1;
+}
+.shadow_effect1 {
+  /* box-shadow: 2px 4px 10px red, 8px 10px 10px #1d1e1fb8; */
+  box-shadow: 2px 4px 10px #ffffffb8, 8px 10px 10px #a8a5a5b8;
+}
+/* Black container  */
+.black_cont {
+  background-color: var(--border-col);
+  border-radius: var(--bdr-radius);
+}
+/* Effects */
+.zoom {
+  border-radius: var(--bdr-radius);
+  overflow: hidden;
+}
+.img_effect:hover img {
+  /* object-fit: cover; */
+  transform: scale(1.09);
+}
+/* Underline animation */
+.hover-underline-animation1 {
+  display: inline-block;
+  position: relative;
+}
+.hover-underline-animation1:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.13rem;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  /* color: #0087ca; */
+}
+.hover-underline-animation:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--red-col);
+  -webkit-text-decoration-color: var(--red-col);
+  text-decoration-thickness: 0.13rem;
+}
+/* Margin-padding */
+.top-bottom_margin2 {
+  margin: 2rem 0rem;
+}
+.top-bottom_margin4 {
+  margin: 4rem 0rem;
+}
+.pad-1{
+  padding: 1rem;
+}
+.pad_btm-1{
+  padding-bottom: 1rem;
+}
+/* Copyright */
+#blog_copyright {
+  padding: 1rem;
+  background-color: var(--border-col);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#blog_copyright #copyright {
+  display: inline;
+  background-color: black;
+  border-radius: var(--bdr-radius);
+}
+#back-to-top_btns {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+/* Text-Outline  */
+.txt-outline{
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
+.gold{
+  -webkit-text-fill-color: gold;
+}
+.blue-font{
+  color:rgb(59, 126, 241);
+}

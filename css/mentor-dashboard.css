@@ -1,0 +1,157 @@
+/* SETTING UP DASHBOARD */
+.profile-sidebar{
+  padding: 3rem 0rem;
+  background-color: var(--cream-bg);
+  border-radius: var(--bdr-radius);
+}
+.user-avatar{
+  border: 6px solid rgb(0, 132, 255);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-widget{
+  padding-left: 1rem;
+}
+.user-avatar:hover img{
+    transform: scale(1.1);
+}
+.user-widget .user-avatar img {
+  width: 200px; 
+}
+.user-widget .mentor-specilization {
+  margin: 10px;
+}
+.progress-cont {
+  width: 100%;
+  height: 100%;
+}
+.progress-bar {
+  background: #959595;
+  width: 260px;
+  height: 10px;
+  border-radius: 5px;
+}
+.progress-bar div {
+  height: 10px;
+  border-radius: 5px;
+  width: 0%;
+  background: var(--blue-col-linear);
+}
+.progress-bar div span {
+  height: 30px;
+  width: 30px;
+  font-size: 13px;
+  border-radius: 50%;
+  float: right;
+  background: rgba(255, 255, 255, 0.555);
+  margin-top: -15px;
+  margin-right: -20px;
+}
+.profile {
+  animation: html 1s linear forwards;
+}
+.profile span {
+  border: 1px solid rgb(0, 132, 255);
+}
+@keyframes html {
+  100% {
+    width: 86%;
+  }
+}
+.custom-sidebar a {
+  text-decoration: none;
+  color: black;
+}
+.custom-sidebar ul {
+  position: relative;
+  list-style: none;
+  padding-top: 2rem;
+}
+.custom-sidebar ul li {
+  border-radius: var(--bdr-radius);
+  background-color: aqua;
+  margin: 1rem;
+  padding: 1.2rem;
+}
+.custom-sidebar ul li i {
+  padding: 0rem 1rem;
+}
+.custom-sidebar ul li:hover a{
+    color:rgb(77, 147, 240);
+}
+.custom-sidebar ul .i-at-end {
+  position: absolute;
+  right: 30px;
+}
+.custom-sidebar ul li:nth-child(1) {
+  background: linear-gradient(
+    135deg,
+    rgba(163, 200, 229, 0.7),
+    rgba(130, 218, 239, 0.9),
+    rgba(103, 180, 228, 0.7)
+  );
+}
+
+.custom-sidebar ul li:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    rgba(253, 253, 188, 0.7),
+    rgba(228, 238, 91, 0.9),
+    rgba(229, 211, 130, 0.7)
+  );
+}
+
+.custom-sidebar ul li:nth-child(3) {
+  background: linear-gradient(
+    135deg,
+    rgba(237, 172, 180, 0.7),
+    rgba(239, 138, 150, 0.9)
+  );
+}
+
+.custom-sidebar ul li:nth-child(4) {
+  background: linear-gradient(
+    135deg,
+    rgba(226, 238, 192, 0.7),
+    rgba(184, 236, 52, 0.9)
+  );
+}
+
+.custom-sidebar ul li:nth-child(5) {
+  background: linear-gradient(
+    135deg,
+    rgba(207, 183, 242, 0.7),
+    rgba(138, 107, 248, 0.9)
+  );
+}
+
+.custom-sidebar ul li:nth-child(6) {
+  background: linear-gradient(
+    135deg,
+    rgba(163, 236, 186, 0.7),
+    rgba(92, 245, 222, 0.9)
+  );
+}
+
+.custom-sidebar ul li:nth-child(7) {
+  background: linear-gradient(
+    135deg,
+    rgba(78, 243, 255, 0.7),
+    rgba(146, 239, 253, 0.9)
+  );
+}
+
+.custom-sidebar ul li:nth-child(8) {
+  background: linear-gradient(
+    125deg,
+    rgba(255, 236, 210, 0.7),
+    rgba(252, 182, 159, 0.9)
+  );
+}
+.custom-sidebar ul li:nth-child(9) {
+  background: linear-gradient(
+    135deg,
+    rgba(161, 196, 253, 0.7),
+    rgba(194, 233, 251, 0.9)
+  );
+}

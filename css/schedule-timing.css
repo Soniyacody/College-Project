@@ -1,0 +1,95 @@
+.schedule-timing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.schedule-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  border-radius: var(--bdr-radius);
+  border: 1px solid rgba(0, 0, 0, 0.665);
+}
+.schedule-form-style form select {
+  background: rgb(175, 213, 247);
+  padding: 0.8rem; /* Adjust this value */
+  width: 250px;
+  font-size: 18px;
+}
+.schedule-form-style form option {
+  background: aliceblue;
+  padding: 25px; /* Adjust this value */
+}
+
+.schedule-form-style .form-element {
+  border-radius: var(--bdr-radius);
+}
+/* STYLING HEADER OF SCHEDULE  */
+.schedule-day {
+  background: rgba(162, 147, 147, 0.513);
+  font-size: 15px;
+  margin: 0.5rem;
+  border-radius: var(--bdr-radius-lite);
+}
+.schedule-cnt .active-day {
+  background: rgba(62, 160, 246, 0.867);
+}
+.schedule-day:hover {
+  background: rgba(167, 166, 166, 0.745);
+}
+.schedule-tab span {
+  padding: 0.7rem;
+  margin-right: 1rem;
+  border-radius: var(--bdr-radius-lite);
+  background: rgb(231, 104, 104);
+}
+.schedule-body .schedule-tab-title a {
+  text-decoration: none;
+  color: rgb(1, 80, 199);
+}
+.schedule-body .schedule-tab-title a i {
+  font-size: 2rem;
+}
+.schedule-tab i {
+  margin-left: 0.5rem;
+  font-size: 1.4rem;
+  color: rgba(238, 236, 236, 0.87);
+}
+.schedule-tab i:hover {
+  color: white;
+}
+/* Design specially for day wise slot  */
+.day-schedule {
+  display: none;
+}
+
+/* FALTU CODE IS HERE  */
+/* Styling for the modal overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the modal */
+.modal_bg {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the close button in the modal */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}

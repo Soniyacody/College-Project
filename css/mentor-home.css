@@ -1,0 +1,156 @@
+/* Mentor HOME BANNER SECTION  */
+.mentor-home-banner{
+    background: url('../public/party.jpg') no-repeat center center / cover;
+    color: white;
+    z-index: -1;
+}
+.mentor-home-title{
+    background-color: rgba(37, 35, 35, 0.579);
+    z-index: 1;
+    padding: 10rem 5rem;
+}
+/* HOW IT WORKS SECTION  */
+.how-it-works{
+    padding: 3rem 0rem;
+    background: var(--cream-bg);
+}
+.how_works_cont{
+    width: 100%;
+}
+.how_works_box{
+    width: 25%;
+    height: 450px;
+    background-color: white;
+    border-radius: var(--bdr-radius);
+}
+.how_works_cont img{
+    width:280px;
+    aspect-ratio: 1;
+}
+/* MENTORS CAROUSEL */
+.mentors-cnt{
+    padding: 2rem 0rem;
+    background:var(--blue-col-linear);
+}
+.mentors-cnt .slider-controls{
+    display: none;
+}
+.mentors-slides{
+    transition: transform 0.5s ease-in-out;
+}
+.mentor-box{
+    margin: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+.mentor-box{
+    border-radius: var(--bdr-radius);
+    background: var(--white-bg);
+}
+.mentor-box .mentor-name{
+    color:rgb(9, 143, 253);
+    font-weight: bold;
+}
+
+.mentor-box .mentor-img {
+    height: 220px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: var(--bdr-radius);
+    transition: transform 0.3s; 
+}
+
+.mentor-box:hover .mentor-img {
+    transform: scale(1.1);
+    box-sizing: border-box;
+}
+
+.mentor-specilization{
+    margin: 1rem 0rem;
+}
+.mentor-descr i{
+    margin-right: 1rem;
+}
+.star-not-filled{
+    color:rgb(182, 179, 179);
+}
+.star-filled{
+    color: rgb(249, 187, 0);
+}
+.mentor-location>i{
+    color: rgb(8, 180, 31);
+    font-size: 35px;
+}
+.carousel-dots span{
+    margin: 0.5rem;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    background:rgba(169, 167, 167, 0.606);
+}
+.carousel-dots .dot.active-dot {
+    background-color: var(--white-bg); 
+}
+.mentors-cnt .carousel .card .img {
+    background:var(--blue-col-linear);
+}
+.carousel-dots span{
+    display: inline-block;
+}
+/* identify-mental-illness */
+.identify-mental-illness{
+    padding: 3rem 1rem;
+    background: var(--white-bg);
+}
+.types-of-disorder{
+    flex-wrap: wrap;
+}
+.image-overlay-cnt{
+    margin: 1rem;
+    background:var(--blue-col-linear);
+    border-radius: var(--bdr-radius);
+}
+.image-overlay{
+    position: relative;
+}
+.image-overlay>img{
+    display: block;
+    border-radius: var(--bdr-radius);
+    width: 300px;
+    object-fit: fill;
+    height: 250px;
+}
+.image-overlay-desc{
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+    border-radius: var(--bdr-radius);
+    right: 0px;
+    background: rgba(0, 0, 0, 0.414);
+    color: white;
+    opacity: 0;
+}
+.image-overlay-desc>ul{
+    padding:0.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: baseline;
+}
+.image-overlay-cnt:hover .image-overlay-desc{
+    opacity: 1;
+}
+.mentor-page-counter{
+    background: var(--blue-col-linear);
+}
+.mentor-page-counter ul li i{
+    font-size: 80px;
+    color: white;
+    background-color:rgb(32, 213, 233);
+    border-radius: var(--bdr-radius);
+}
+/* Utility */
+.span-text{
+    padding: 0rem 10rem;
+}

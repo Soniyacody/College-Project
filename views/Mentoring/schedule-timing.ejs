@@ -1,0 +1,380 @@
+<%- include('./mentors-header.ejs') %>
+    <div class="schedule-timing schedule-form-style pad-1">
+        <div class="dash">
+            <%- include('./mentor-dashboard.ejs') %>
+        </div>
+        <div class="schedule-cnt top-bottom_margin4 dash-other-cnt pad-1">
+            <div class="schedule-title">
+                <h3 class="normal-heading pad_btm-1">Schedule Timings</h3>
+                <span class="font1 pad_btm-1">Timing Slot Duration</span>
+                <form action="/action_page.php" class="pad-1 pad_btm-1 font1">
+                    <select name="time-slot" class="font1 form-element" id="time-slot">
+                        <option value="select" class='form-element'>Select</option>
+                        <option value="30-mins" class='form-element'>30 mins</option>
+                        <option value="45-mins" class='form-element'>45 mins</option>
+                        <option value="1-hour" class='form-element'>1 hour</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="schedule-body pad-1 top-bottom_margin2">
+                <div class="schedule-header  pad_btm-1 flexbox-even">
+                    <span class="schedule-day font1 pad-1" data-target="slot_sunday">SUNDAY</span>
+                    <span class="schedule-day active-day font1 pad-1" data-target="slot_monday">MONDAY</span>
+                    <span class="schedule-day font1 pad-1" data-target="slot_tuesday">TUESDAY</span>
+                    <span class="schedule-day font1 pad-1" data-target="slot_wednesday">WEDNESDAY</span>
+                    <span class="schedule-day font1 pad-1" data-target="slot_thursday">THURSDAY</span>
+                    <span class="schedule-day font1 pad-1" data-target="slot_friday">FRIDAY</span>
+                    <span class="schedule-day font1 pad-1" data-target="slot_saturday">SATURDAY</span>
+                </div>
+
+                <div class="schedule-tab-title">
+                    <div id="slot_sunday" class="day-schedule">
+                        <div class="">
+                            <div class="flexbox-around pad_btm-1">
+                                <h3 class="normal-heading  pad_btm-1">
+                                    Time Slots
+                                </h3>
+                                <a data-toggle="modal" class="font1 add-slot" href="#"><i
+                                        class="fa fa-plus-circle"></i>Add
+                                    Slot</a>
+                            </div>
+                            <p class="font1">Not Available</p>
+                        </div>
+                    </div>
+                    <div id="slot_monday" class=" day-schedule">
+                        <div>
+                            <div class="flexbox-around">
+                                <h3 class="normal-heading  pad_btm-1">
+                                    Time Slots
+                                </h3>
+                                <a data-toggle="modal" class="font1 edit-element" href="#"><i
+                                        class="fa fa-edit mr-1"></i>Edit</a>
+                            </div>
+                            <div class="schedule-tab flexbox-start  font1">
+                                <span> 8:00 am-9:00 am<i class="fa fa-times"></i></span>
+                                <span> 10:00 am-11:00 am<i class="fa fa-times"></i></span>
+                                <span> 1:00 pm-2:00 pm<i class="fa fa-times"></i></span>
+                                <span> 3:00 pm-4:00 pm<i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="slot_tuesday" class="day-schedule">
+                        <div>
+                            <div class="flexbox-around pad_btm-1">
+                                <h3 class="normal-heading  pad_btm-1">
+                                    Time Slots
+                                </h3>
+                                <a data-toggle="modal" class="font1 add-slot" href="#"><i
+                                        class="fa fa-plus-circle"></i>Add
+                                    Slot</a>
+                            </div>
+                            <p class="font1">Not Available</p>
+                        </div>
+                    </div>
+                    <div id="slot_wednesday" class="day-schedule">
+                        <div>
+                            <div class="flexbox-around pad_btm-1">
+                                <h3 class="normal-heading  pad_btm-1">
+                                    Time Slots
+                                </h3>
+                                <a data-toggle="modal" class="font1 add-slot" href="#"><i
+                                        class="fa fa-plus-circle"></i>Add
+                                    Slot</a>
+                            </div>
+                            <p class="font1">Not Available</p>
+                        </div>
+                    </div>
+                    <div id="slot_thursday" class="day-schedule">
+                        <div>
+                            <div class="flexbox-around pad_btm-1">
+                                <h3 class="normal-heading  pad_btm-1">
+                                    Time Slots
+                                </h3>
+                                <a data-toggle="modal" class="font1 add-slot" href="#"><i
+                                        class="fa fa-plus-circle"></i>Add
+                                    Slot</a>
+                            </div>
+                            <p class="font1">Not Available</p>
+                        </div>
+                    </div>
+                    <div id="slot_friday" class="day-schedule">
+                        <div>
+                            <div class="flexbox-around pad_btm-1">
+                                <h3 class="normal-heading  pad_btm-1">
+                                    Time Slots
+                                </h3>
+                                <a data-toggle="modal" class="font1 add-slot" href="#"><i
+                                        class="fa fa-plus-circle"></i>Add
+                                    Slot</a>
+                            </div>
+                            <p class="font1">Not Available</p>
+                        </div>
+                    </div>
+                    <div id="slot_saturday" class="day-schedule">
+                        <div>
+                            <div class="flexbox-around pad_btm-1">
+                                <h3 class="normal-heading  pad_btm-1">
+                                    Time Slots
+                                </h3>
+                                <a data-toggle="modal" class="font1 add-slot" href="#"><i
+                                        class="fa fa-plus-circle"></i>Add
+                                    Slot</a>
+                            </div>
+                            <p class="font1">Not Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('mentors-footer1.ejs') %>
+        <script src="/js/schedult-time.js" defer></script>
+        <%- include('mentors-footer2.ejs') %>
+            <div class="modal-overlay" id="modal-overlay">
+                <div class="modal_bg  schedule-form-style" id="modal ">
+                    <div class="edit-slot-container modal-content">
+                        <div class="flexbox-around">
+                            <h5 class="normal-heading font1"> Add Time Slots</h5> <span><i
+                                    class="fa fa-times pad-1 close-modal "></i></span>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="hours-info">
+                                    <div class=" flexbox-even slot">
+                                        <div class="flex pad-1">
+                                            <span class="font1 pad-1">Start Time</span>
+                                            <div class="form-group form-element font1"><select
+                                                    class="form-control form-element" name="select-slot">
+                                                    <option>Select</option>
+                                                    <option>12.00 am</option>
+                                                    <option>1.00 am</option>
+                                                    <option>2.00 am</option>
+                                                    <option>3.00 am</option>
+                                                    <option>4.00 am</option>
+                                                    <option>5.00 am</option>
+                                                    <option>6.00 am</option>
+                                                    <option>7.00 am</option>
+                                                    <option>8.00 am</option>
+                                                    <option>9.00 am</option>
+                                                    <option>10.00 am</option>
+                                                    <option>11.00 am</option>
+                                                    <option>12.00 pm</option>
+                                                    <option>1.00 pm</option>
+                                                    <option>2.00 pm</option>
+                                                    <option>3.00 pm</option>
+                                                    <option>4.00 pm</option>
+                                                    <option>5.00 pm</option>
+                                                    <option>6.00 pm</option>
+                                                    <option>7.00 pm</option>
+                                                    <option>8.00 pm</option>
+                                                    <option>9.00 pm</option>
+                                                    <option>10.00 pm</option>
+                                                    <option>11.00 pm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="flex pad-1">
+                                            <span class="font1 pad-1">End Time</span>
+                                            <div class="form-group form-element font1"><select
+                                                    class="form-control form-element" name="select-slot">
+                                                    <option>Select</option>
+                                                    <option>12.00 am</option>
+                                                    <option>1.00 am</option>
+                                                    <option>2.00 am</option>
+                                                    <option>3.00 am</option>
+                                                    <option>4.00 am</option>
+                                                    <option>5.00 am</option>
+                                                    <option>6.00 am</option>
+                                                    <option>7.00 am</option>
+                                                    <option>8.00 am</option>
+                                                    <option>9.00 am</option>
+                                                    <option>10.00 am</option>
+                                                    <option>11.00 am</option>
+                                                    <option>12.00 pm</option>
+                                                    <option>1.00 pm</option>
+                                                    <option>2.00 pm</option>
+                                                    <option>3.00 pm</option>
+                                                    <option>4.00 pm</option>
+                                                    <option>5.00 pm</option>
+                                                    <option>6.00 pm</option>
+                                                    <option>7.00 pm</option>
+                                                    <option>8.00 pm</option>
+                                                    <option>9.00 pm</option>
+                                                    <option>10.00 pm</option>
+                                                    <option>11.00 pm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex slot-row">
+                                        <div class="content flexbox-even time-slot-row">
+                                            <div class="flex pad-1">
+                                                <span class="font1 pad-1">Start Time</span>
+                                                <div class="form-group form-element font1"><select
+                                                        class="form-control form-element" name="select-slot">
+                                                        <option>Select</option>
+                                                        <option>12.00 am</option>
+                                                        <option>1.00 am</option>
+                                                        <option>2.00 am</option>
+                                                        <option>3.00 am</option>
+                                                        <option>4.00 am</option>
+                                                        <option>5.00 am</option>
+                                                        <option>6.00 am</option>
+                                                        <option>7.00 am</option>
+                                                        <option>8.00 am</option>
+                                                        <option>9.00 am</option>
+                                                        <option>10.00 am</option>
+                                                        <option>11.00 am</option>
+                                                        <option>12.00 pm</option>
+                                                        <option>1.00 pm</option>
+                                                        <option>2.00 pm</option>
+                                                        <option>3.00 pm</option>
+                                                        <option>4.00 pm</option>
+                                                        <option>5.00 pm</option>
+                                                        <option>6.00 pm</option>
+                                                        <option>7.00 pm</option>
+                                                        <option>8.00 pm</option>
+                                                        <option>9.00 pm</option>
+                                                        <option>10.00 pm</option>
+                                                        <option>11.00 pm</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="flex pad-1">
+                                                <span class="font1 pad-1">End Time</span>
+                                                <div class="form-group form-element font1"><select
+                                                        class="form-control form-element" name="select-slot">
+                                                        <option>Select</option>
+                                                        <option>12.00 am</option>
+                                                        <option>1.00 am</option>
+                                                        <option>2.00 am</option>
+                                                        <option>3.00 am</option>
+                                                        <option>4.00 am</option>
+                                                        <option>5.00 am</option>
+                                                        <option>6.00 am</option>
+                                                        <option>7.00 am</option>
+                                                        <option>8.00 am</option>
+                                                        <option>9.00 am</option>
+                                                        <option>10.00 am</option>
+                                                        <option>11.00 am</option>
+                                                        <option>12.00 pm</option>
+                                                        <option>1.00 pm</option>
+                                                        <option>2.00 pm</option>
+                                                        <option>3.00 pm</option>
+                                                        <option>4.00 pm</option>
+                                                        <option>5.00 pm</option>
+                                                        <option>6.00 pm</option>
+                                                        <option>7.00 pm</option>
+                                                        <option>8.00 pm</option>
+                                                        <option>9.00 pm</option>
+                                                        <option>10.00 pm</option>
+                                                        <option>11.00 pm</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2"><a
+                                                class="btns btns-danger trash"><i class="far fa-trash-alt"
+                                                    style="color: rgb(255, 255, 255);"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="pad-1 font1 flex ">
+                                    <h3 class="blue-font"><a><i class="fa fa-plus-circle add-row"></i> Add More</a></h3>
+                                </div>
+                                <div class="flex">
+                                    <button type="submit" class="btns1 style_box pad-1  org_btns org_col">Save
+                                        Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="add-slot-container modal-content">
+                        <div class="flexbox-even">
+                            <h5 class="normal-heading font1"> Add Time Slots</h5> <span><i
+                                    class="fa fa-times pad-1 close-modal "></i></span>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="hours-info">
+                                    <div class="flexbox-y slot-row pad-1">
+                                        <div class="flex pad_btm-1">
+                                            <span class="font1 pad-1">Start Time</span>
+                                            <div class="form-group form-element font1"><select
+                                                    class="form-control form-element" name="select-slot">
+                                                    <option>Select</option>
+                                                    <option>12.00 am</option>
+                                                    <option>1.00 am</option>
+                                                    <option>2.00 am</option>
+                                                    <option>3.00 am</option>
+                                                    <option>4.00 am</option>
+                                                    <option>5.00 am</option>
+                                                    <option>6.00 am</option>
+                                                    <option>7.00 am</option>
+                                                    <option>8.00 am</option>
+                                                    <option>9.00 am</option>
+                                                    <option>10.00 am</option>
+                                                    <option>11.00 am</option>
+                                                    <option>12.00 pm</option>
+                                                    <option>1.00 pm</option>
+                                                    <option>2.00 pm</option>
+                                                    <option>3.00 pm</option>
+                                                    <option>4.00 pm</option>
+                                                    <option>5.00 pm</option>
+                                                    <option>6.00 pm</option>
+                                                    <option>7.00 pm</option>
+                                                    <option>8.00 pm</option>
+                                                    <option>9.00 pm</option>
+                                                    <option>10.00 pm</option>
+                                                    <option>11.00 pm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="flex">
+                                            <span class="font1 pad-1">End Time</span>
+                                            <div class="form-group form-element font1"><select
+                                                    class="form-control form-element" name="select-slot">
+                                                    <option>Select</option>
+                                                    <option>12.00 am</option>
+                                                    <option>1.00 am</option>
+                                                    <option>2.00 am</option>
+                                                    <option>3.00 am</option>
+                                                    <option>4.00 am</option>
+                                                    <option>5.00 am</option>
+                                                    <option>6.00 am</option>
+                                                    <option>7.00 am</option>
+                                                    <option>8.00 am</option>
+                                                    <option>9.00 am</option>
+                                                    <option>10.00 am</option>
+                                                    <option>11.00 am</option>
+                                                    <option>12.00 pm</option>
+                                                    <option>1.00 pm</option>
+                                                    <option>2.00 pm</option>
+                                                    <option>3.00 pm</option>
+                                                    <option>4.00 pm</option>
+                                                    <option>5.00 pm</option>
+                                                    <option>6.00 pm</option>
+                                                    <option>7.00 pm</option>
+                                                    <option>8.00 pm</option>
+                                                    <option>9.00 pm</option>
+                                                    <option>10.00 pm</option>
+                                                    <option class="trash">11.00 pm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pad-1 font1 ">
+                                    <h3 class="blue-font"><a><i class="fa fa-plus-circle add-row"></i> Add More</a></h3>
+                                </div>
+                                <div class="flex">
+                                    <button type="submit" class="btns1 style_box pad-1  org_btns org_col">Save
+                                        Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
