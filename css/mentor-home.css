@@ -50,6 +50,7 @@
 .mentor-box .mentor-name{
     color:rgb(9, 143, 253);
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .mentor-box .mentor-img {
@@ -66,7 +67,8 @@
 }
 
 .mentor-specilization{
-    margin: 1rem 0rem;
+    font-style: italic;
+    font-weight: lighter;
 }
 .mentor-descr i{
     margin-right: 1rem;

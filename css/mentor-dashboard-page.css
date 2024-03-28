@@ -51,8 +51,9 @@
 .mentee-list .table-avatar a {
   color: black;
   text-decoration: none;
+  padding-left: 0.7rem;
 }
-tables td a {
+.tables td a {
   margin-left: 10px;
   font-size: 17px;
 }

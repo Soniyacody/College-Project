@@ -119,5 +119,6 @@ document.querySelector(".add-slot-container .add-row").addEventListener("click",
 // Event listener to add a new row when "Add More" is clicked in the "edit-slot-container"
 document.querySelector(".edit-slot-container .add-row").addEventListener("click", function () {
   const container = document.querySelector(".edit-slot-container");
+  console.log("Container ",container);
   addRow(container);
 });

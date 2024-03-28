@@ -27,14 +27,18 @@
                     <h6 class="yellow_font">Mental Health and theraphy</h6>
                 </div>
             </div>
-            <div class="nav_items flex">
+            <div class="nav_items flexbox-around">
                 <ul class="flex">
                     <li><a href="#">Home</a></li>
                     <li><a href="#"> About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="/Mentoring/mentor-homepage">Mentorship</a></li>
-                    <li><a href="/views/blog.html" target="_blank">Blog</a></li>
+                    <li><a href="/views/Blog/blog.html" target="_blank">Blog</a></li>
                     <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="flex">
+                    <li><a href="/views/LoginForm/login.html">Login</a></li>
+                    <li><a href="/views/LoginForm/register.html">Register</a></li>
                 </ul>
             </div>
             <!-- <div class="contact">
@@ -342,7 +346,6 @@
         <!-- TESTIMONIAL END  -->
         <!-- BLOG POSTS  -->
         <%- include('blog_show.ejs') %>
-
         <!-- FAQ START  -->
         <div class="faq-cont">
             <div class="feature_title flexbox-y">
@@ -407,7 +410,7 @@
             </div>
         </div>
         <!-- PROJECT COUNTER START -->
-        <div class="project-counter-wrp">
+        <div class="project-counter-wrp" id="project-counter-wrp">
             <ul class=" pad-1">
                 <li class="pad-1 style_box1 flexbox-y shadow_effect1">
                     <i class="fa fa-trophy pad-1"></i>

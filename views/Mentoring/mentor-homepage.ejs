@@ -50,10 +50,10 @@
                 <span class="font1 pad_btm-1">Do you want to move on next step? Choose your most popular leaning mentors, it
                     will help you to achieve your professional goals.</span>
                 <div class="slider-container slider-carousel pad-1 flexbox-y">
-                    <div class="slider  flex">
+                    <div class="slider  flex-x">
                         <!-- 1 -->
                         <div class=" slides" data-active="true">
-                            <div class="mentors-slides flex">
+                            <div class="mentors-slides flex-x">
                                 <div class="mentor-box flexbox-y">
                                     <img src="/public/author1.jpg" alt="" class="mentor-img">
                                     <div class="mentor-descr pad-1">
@@ -134,7 +134,7 @@
                         </div>
                         <!-- 2 -->
                         <div class=" slides" data-active="true">
-                            <div class="mentors-slides flex">
+                            <div class="mentors-slides flex-x">
                                 <div class="mentor-box flexbox-y">
                                     <img src="/public/m-5.jpg" alt="" class="mentor-img">
                                     <div class="mentor-descr pad-1">
@@ -215,7 +215,7 @@
                         </div>
                         <!-- 3 -->
                         <div class=" slides" data-active="true">
-                            <div class="mentors-slides flex">
+                            <div class="mentors-slides flex-x">
                                 <div class="mentor-box flexbox-y">
                                     <img src="/public/mentor1.jpg" alt="" class="mentor-img">
                                     <div class="mentor-descr pad-1">
@@ -296,7 +296,7 @@
                         </div>
                         <!-- 4 -->
                         <div class=" slides" data-active="true">
-                            <div class="mentors-slides flex">
+                            <div class="mentors-slides flex-x">
                                 <div class="mentor-box flexbox-y">
                                     <img src="/public/m-5.jpg" alt="" class="mentor-img">
                                     <div class="mentor-descr pad-1">
@@ -383,7 +383,7 @@
                             data-banner-sliderbtns="next">Next</button>
                     </div>
                 </div>
-                <div class="carousel-dots pad-1 flex">
+                <div class="carousel-dots pad-1 flex-x">
                     <div class="dots">
                         <span class="dot active-dot"></span>
                         <span class="dot"></span>
@@ -399,7 +399,7 @@
                 <span class="font1 pad_btm-1 span-text centered">Psychiatric disorders, encompass a wide range of conditions
                     that affect a person's thoughts, emotions, behaviors, and overall well-being. Here are some
                     different types of mental health issues:</span>
-                <div class="types-of-disorder top-bottom_margin2 flex">
+                <div class="types-of-disorder top-bottom_margin2 flex-x">
                     <!-- 1 -->
                     <div class="image-overlay-cnt flexbox-y">
                         <div class="image-overlay-title pad-1">
@@ -517,15 +517,16 @@
                     </div>
 
                 </div>
-                <div class="banner-button flex">
-                    <button class="org_btns style_box btns1 org_col flex">Book Online Session<div
+                <div class="banner-button flex-x">
+                    <button class="org_btns style_box btns1 org_col flex-x">Book Online Session<div
                             class="btns_img_cnt black_cont"><img src="/public/icons8-finger.svg" alt="" srcset=""></div>
                     </button>
                 </div>
             </div>
             <%- include('../blog_show.ejs') %>
                 <!-- PROJECT COUNTER START -->
-                <div class="project-counter-wrp mentor-page-counter">
+                <div class="project-counter-wrp mentor-page-counter" >
+                <!-- <div class="project-counter-wrp mentor-page-counter" id="project-counter-wrp"> -->
                     <ul class=" pad-1">
                         <li class="pad-1 style_box1 flexbox-y shadow_effect1">
                             <i class="fa fa-trophy pad-1 blue-font"></i>

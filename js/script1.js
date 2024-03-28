@@ -11,6 +11,20 @@ function startCounter(count, elementId, target, interval) {
   }, interval);
 }
 
+// function updateProjectCounter() {
+//   // Check if all counters have completed
+//   if (
+//     "number1" in counters &&
+//     "number2" in counters &&
+//     "number3" in counters &&
+//     "number4" in counters
+//   ) {
+//     // Calculate the total and update the project counter
+//     const total = counters["number1"] + counters["number2"] + counters["number3"] + counters["number4"];
+//     document.getElementById("project-counter-wrp").innerHTML = total;
+//   }
+// }
+
 function updateProjectCounter() {
   // Check if all counters have completed
   if (
@@ -19,9 +33,17 @@ function updateProjectCounter() {
     "number3" in counters &&
     "number4" in counters
   ) {
-    // Calculate the total and update the project counter
-    const total = counters["number1"] + counters["number2"] + counters["number3"] + counters["number4"];
-    document.getElementById("project-counter-wrp").innerHTML = total;
+    // Check if any of the counters are still undefined (i.e., not completed)
+    if (
+      counters["number1"] !== undefined &&
+      counters["number2"] !== undefined &&
+      counters["number3"] !== undefined &&
+      counters["number4"] !== undefined
+    ) {
+      // Calculate the total and update the project counter
+      const total = counters["number1"] + counters["number2"] + counters["number3"] + counters["number4"];
+      document.getElementById("project-counter-wrp").innerHTML = total;
+    }
   }
 }
 
