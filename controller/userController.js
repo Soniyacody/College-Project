@@ -40,7 +40,7 @@ const sendResetPasswordMail=async(name,email,token)=>{
 
 const loadLogin = async (req, res) => {
   try {
-    res.render("login");
+    res.render("LoginForm/login");
   } catch (error) {
     console.log(error.message);
   }
@@ -50,8 +50,9 @@ const verifyLogin = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const userData = await User.findOne({ email: email });
+    
     if (userData) {
-      // console.log(userData);
+      console.log(userData);
       const passwordMatch = await bcrypt.compare(password, userData.password);
       if (passwordMatch) {
         
@@ -59,15 +60,16 @@ const verifyLogin = async (req, res) => {
         req.session.is_admin = userData.is_admin;
         res.cookie(`user`,JSON.stringify(userData));
         if (userData.is_admin == 1) {
-          res.redirect("/dashboard");
+          res.redirect("/");
         } else {
           res.redirect("/profile");
         }
       } else {
-        res.render("login", { message: "Email and password is incorrect" });
+        console.log("Majboori");
+        res.render("LoginForm/login", { message: "Email and password is incorrect" });
       }
     } else {
-      res.render("login", { message: "Email and password is incorrect" });
+      res.render("LoginForm/login", { message: "Email and password is incorrect" });
     }
   } catch (error) {
     console.log(error.message);

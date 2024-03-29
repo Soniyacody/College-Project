@@ -30,10 +30,11 @@ const upload=multer({storage:storage});
 const adminLoginAuth=require('../middlewares/adminLoginAuth');
 
 const adminController=require('../controller/adminController');
-admin_route.get('/blog-setup',adminController.blogSetup);
-admin_route.post('/blog-setup',upload.single('blog_image'),adminController.blogSetupSave);
-admin_route.get('/dashboard',adminLoginAuth.isLogin,adminController.dashboard);
+//Register
+admin_route.get('/LoginForm/register',adminController.blogSetup);
+admin_route.post('/LoginForm/register',upload.single('user_logo'),adminController.blogSetupSave);
 
+admin_route.get('/dashboard',adminLoginAuth.isLogin,adminController.dashboard);
 admin_route.get('/create-post',adminLoginAuth.isLogin,adminController.loadPostDashboard);
 admin_route.post('/create-post',adminLoginAuth.isLogin,adminController.addPost);
 admin_route.post('/upload-post-image',upload.single('image'),adminLoginAuth.isLogin,adminController.uploadPostImage);

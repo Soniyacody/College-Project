@@ -6,7 +6,6 @@ const blogSettingSchema=mongoose.Schema({
     },
     user_logo:{
         type:String,
-        required:true
     },
     description:{
         type:String,

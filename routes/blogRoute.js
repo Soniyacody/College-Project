@@ -7,7 +7,7 @@ blog_route.set(express.static('css'));
 blog_route.set(express.static('js'));
 
 const blogController=require('../controller/blogController');
-blog_route.get('/',blogController.loadBlog);
+// blog_route.get('/',blogController.loadBlog);
 blog_route.get('/post/:id',blogController.loadPost);
 blog_route.post('/add-comment',blogController.addComment);
 blog_route.post('/do-reply',blogController.doReply);

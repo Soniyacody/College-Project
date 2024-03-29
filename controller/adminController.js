@@ -13,12 +13,13 @@ const securePassword = async (password) => {
 };
 
 const blogSetup = async (req, res) => {
+
   try {
     var blogSetting = await BlogSetting.find({});
-    if (blogSetting.length > 2) {
-      res.redirect("/login");
+    if (blogSetting.length>1) {
+      res.redirect("/LoginForm/login");
     } else {
-      res.render("blogSetup");
+      res.render("LoginForm/register");
     }
   } catch (error) {
     console.log(error.message);
@@ -27,10 +28,10 @@ const blogSetup = async (req, res) => {
 const blogSetupSave = async (req, res) => {
   try {
     const username = req.body.username;
-    const user_logo = req.file.user_logo;
+    const user_logo = req.file ? req.file.filename : '';
+    // const user_logo = req.file.user_logo;
     const description = req.body.description;
     const email = req.body.email;
-    const name = req.body.name;
     const password = await securePassword(req.body.password);
     const blogSetting = new BlogSetting({
       username: username,
@@ -39,19 +40,19 @@ const blogSetupSave = async (req, res) => {
     });
     await blogSetting.save();
     const user = new User({
-      name: name,
+      name: username,
       email: email,
       password: password,
       is_admin: 1,
     });
     const userData = await user.save();
     if (userData) {
-      res.redirect("/login");
+      res.redirect("/LoginForm/login");
     } else {
-      res.render("blogSetup", { message: "Blog not Setup Properly" });
+      res.render("LoginForm/login", { message: "Blog not Setup Properly" });
     }
   } catch (error) {
-    console.log(error.message);
+    console.log("I am :",error.message);
   }
 };
 // const blogSetupSave = async (req, res) => {

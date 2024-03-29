@@ -20,8 +20,8 @@ user_route.set('views','./views');
 const userController=require('../controller/userController');
 user_route.use(express.static('public'));
 const adminLoginAuth=require('../middlewares/adminLoginAuth');
-user_route.get('/login',adminLoginAuth.isLogout,userController.loadLogin);
-user_route.post('/login',userController.verifyLogin);
+user_route.get('/LoginForm/login',adminLoginAuth.isLogout,userController.loadLogin);
+user_route.post('/LoginForm/login',userController.verifyLogin);
 user_route.get('/logout',adminLoginAuth.isLogin,userController.logout);
 user_route.get('/profile',userController.profile);
 

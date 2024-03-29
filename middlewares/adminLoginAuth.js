@@ -3,7 +3,7 @@ const isLogin=async(req,res,next)=>{
         if(req.session.user_id && req.session.is_admin==1){
             next();
         }else{
-            res.redirect('/login');
+            res.redirect('/LoginForm/login');
         }
         // next(); Youtuber code line
     }catch(error){
@@ -13,7 +13,7 @@ const isLogin=async(req,res,next)=>{
 const isLogout=async(req,res,next)=>{
     try{
         if(req.session.user_id && req.session.is_admin==1){
-          return  res.redirect('/dashboard');
+          return  res.redirect('/Mentoring/mentor-booking');
         }else{
             next();
         }
