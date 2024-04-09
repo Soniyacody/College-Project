@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="mentee-list">
-                <h3 class="normal-heading pad-1">Mentee List</h3>
+                <h3 class="normal-heading pad-1">DashBoard</h3>
                 <hr>
                 <div class="cards-body">
                     <div class="table-responsive">
@@ -42,294 +42,63 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- 1 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/author2.jpeg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">John Smith
-                                                <span>john.smith@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> July 15, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
+                                <% if(posts.length>0){
+                                    var i=1;
+                                    posts.forEach(function(post){
+                                    %>
+                                    <tr>
+                                        <td>
+                                            <h2 class="table-avatar">
+                                                <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
+                                                    <img class="avatar-img" src="<%= post.image %>"
+                                                        alt="User Image">
+                                                </a>
+                                                <a href="/Mentee/mentor-profile"><%= post.title %>
+                                                    <span><%= post.content %></span>
+                                                </a>
+                                            </h2>
+                                        </td>
+                                        <td><%= post.date %></td>
+                                        <td class="text-centered">
+                                            <span class="pendings text-centered"><%= post.blog_tag %></span>
+                                        </td>
+                                        <td class="text-centered">
+                                            <a class="mentors-view" href="/Mentee/mentor-profile">
 
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 2 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-8.jpg"
-                                                    alt="User Image">
+                                                <i class="far fa-eye"></i> View
                                             </a>
-                                            <a href="/Mentee/mentor-profile"> Jenny Brown
-                                                <span>jenny.brown@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> September 5, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
+                                        </td>
+                                    </tr>
 
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 3 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-5.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">David Wilson
-                                                <span> david.wilson@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> June 30, 2022</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
+                                    <% }); }else{ %>
+                                        <tr>
+                                            <td colspan="4">No Post Found</td>
+                                        </tr>
+                                        <% } %>
 
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 4 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-7.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">John Smith
-                                                <span>john.smith@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> July 18, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
+                                            <tr>
+                                                <td>
+                                                    <h2 class="table-avatar">
+                                                        <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
+                                                            <img class="avatar-img rounded-circle" src="/public/m-8.jpg"
+                                                                alt="User Image">
+                                                        </a>
+                                                        <a href="/Mentee/mentor-profile"> Jenny Brown
+                                                            <span>jenny.brown@example.com</span>
+                                                        </a>
+                                                    </h2>
+                                                </td>
+                                                <td> September 5, 2023</td>
+                                                <td class="text-centered">
+                                                    <span class="pendings">PENDING</span>
+                                                </td>
+                                                <td class="text-centered">
+                                                    <a class="mentors-view" href="/Mentee/mentor-profile">
 
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 5 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/author3.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">Lisa Anderson
-                                                <span>:lisa.anderson@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> August 20, 2022</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 6 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-6.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">John Smith
-                                                <span>john.smith@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> Feb 15, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 7 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/author1.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">Lisa Anderson
-                                                <span>lisa.anderson@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> August 20, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 8 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-8.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile"> Michael Brown
-                                                <span>michael.brown@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> September 5, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 9 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-5.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">David Wilson
-                                                <span> david.wilson@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> June 30, 2022</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 10 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-8.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile"> Michael Brown
-                                                <span>michael.brown@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> September 5, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 11 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/m-7.jpg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">John Smith
-                                                <span>john.smith@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> July 18, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- 12 -->
-                                <tr>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-sm mr-2" href="/Mentee mentor-profile">
-                                                <img class="avatar-img rounded-circle" src="/public/author2.jpeg"
-                                                    alt="User Image">
-                                            </a>
-                                            <a href="/Mentee/mentor-profile">John Smith
-                                                <span>john.smith@example.com</span>
-                                            </a>
-                                        </h2>
-                                    </td>
-                                    <td> July 15, 2023</td>
-                                    <td class="text-centered">
-                                        <span class=pendings">PENDING</span>
-                                    </td>
-                                    <td class="text-centered">
-                                        <a class="mentors-view" href="/Mentee/mentor-profile">
-
-                                            <i class="far fa-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
+                                                        <i class="far fa-eye"></i> View
+                                                    </a>
+                                                </td>
+                                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -338,5 +107,5 @@
         </div>
     </div>
 
-<%- include('../../Mentoring/mentors-footer1.ejs') %>
-<%- include('../../Mentoring/mentors-footer2.ejs') %>
+    <%- include('../../Mentoring/mentors-footer1.ejs') %>
+        <%- include('../../Mentoring/mentors-footer2.ejs') %>

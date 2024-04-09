@@ -27,11 +27,11 @@
                     </div>
                 </div>
             </div>
-            <div class="mentee-list">
-                <h3 class="heading pad-1">Create Blog </h3>
+            <div class="mentee-list top-bottom_margin4">
+                <h3 class="heading">Create Blog </h3>
                 <hr>
-               <div class="create-blog">
-                    <form action="/Blog/DashBoard/create-blog" method="post" enctype="multipart/form-data">
+                <div class="create-blog">
+                    <form method="post" enctype="multipart/form-data" id="addPost">
                         <div class="p-1  flex-column  font1 left-margin1">
                             <h3 class="heading_lite font1 pad-1"><i>Title</i></h3>
                             <input type="text" name="title" class="pad-1 input_field" placeholder="Enter Blog Title">
@@ -48,60 +48,94 @@
                                 <option>Relationships and Communication</option>
                                 <option>Inspirational Stories</option>
                                 <option>Mental Health Awareness</option>
-                               
+
                             </select>
                         </div>
-                        
+                        <div class="p-1  flex-column  font1 left-margin1">
+                            <h3 class="heading_lite font1 pad-1"><i>Date</i></h3>
+                            <input type="date" name="date" class="pad-1 input_field" id="date">
+                        </div>
+                        <div class="p-1  flex-column  font1 left-margin1">
+                            <h3 class="heading_lite font1 pad-1"><i>Time Required to read(min)</i></h3>
+                            <input type="number" name="time" class="pad-1 input_field">
+                        </div>
                         <div class="p-1  flex-column  font1 left-margin1">
                             <h3 class="heading_lite font1 pad-1"><i>Image</i></h3>
-                            <button type="button" class="btn btn-primary mt-1" data-toggle="modal"
-                            data-target="#uploadModal">
-                            Upload Image
-                        </button>
-                        <input type="hidden" name="image" id="image">
-                        </div>
-                        <div class="p-1  flex-column  font1 left-margin1">
-                            <h3 class="heading_lite font1 pad-1"><i>Content</i></h3>
-                            <textarea  name="content" class="pad-1 input_field" placeholder="Enter Blog Content"></textarea>
-                        </div>
-                        <div class="p-1  flex-column  font1 left-margin1">
-                            <input type="submit" value="Add Post" class="btn btn-primary mt-3">
+                            <button type="button" id="uploadButton" class="modals-btn" data-toggle="modals"
+                                data-target="#uploadModals">
+                                Upload Image
+                            </button>
+                            <input type="hidden" name="image" id="image">
+                            <input type="hidden" name="user_id" value="<%= user_id %>">
 
-                            <h3 class="heading_lite font1 pad-1"><i>Title</i></h3>
-                            <input type="text" name="title" class="pad-1 input_field" placeholder="Enter Blog Title">
+                        </div>
+                        <div class="pad_btm-1  flex-column  font1 left-margin1">
+                            <h3 class="heading_lite font1 pad-1"><i>Content</i></h3>
+                            <textarea name="content" class="pad-1 input_field" placeholder="Enter Blog Content"
+                                style="width: 451px; height: 125px;"></textarea>
+                        </div>
+                        <div class="flex-column  font1 left-margin1">
+                            <input type="submit" value="Add Post" class="modals-btn">
                         </div>
                     </form>
-               </div>
-               <% if(typeof message!=='undefined' ){ %>
-                <p style="color:green;">
-                    <%= message %>
-                </p>
-                <% } %>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Upload </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
-                <form id="uploadForm" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        <input type="file" name="image" id="image" required>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Upload</button>
-                    </div>
-                </form>
+                <% if(typeof message!=='undefined' ){ %>
+                    <p style="color:green;">
+                        <%= message %>
+                    </p>
+                    <% } %>
             </div>
         </div>
     </div>
+    <div class="modals fade" id="uploadModal">
+        <div class="modal-bg">
+            <div class="modals-dialog modals-dialog-centered">
+                <div class="modals-content">
+                    <div class="modals-header">
+                        <h3 class="font1 ">Upload </h3>
+                        <button type="button" class="closed modals-closebtn">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="pad-1">
+                            <input type="file" name="image" id="image" required>
+                        </div>
+                        <div class="flexbox-end">
+                            <button type="button" class="closed modals-btn">Close</button>
+                            <button type="submit" class="modals-btn">Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var uploadButton = document.getElementById("uploadButton");
+            var modal = document.getElementById("uploadModal");
+            var closeButtons = document.querySelectorAll(".closed");
+
+            uploadButton.addEventListener("click", function() {
+                modal.style.display = "block";
+            });
+
+            // Add event listener to all close buttons
+            closeButtons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    modal.style.display = "none";
+                });
+            });
+
+            window.addEventListener("click", function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+
+
+    </script>
     <script>
         $(document).ready(function() {
             $('#uploadForm').submit(function(event) {
@@ -118,7 +152,7 @@
                         if (data.success == true) {
                             $('#image').val(data.path);
                             alert(data.msg);
-                            $('#uploadModal').modal('hide');
+                            $('#uploadModals').modal('hide');
                         } else {
                             console.log(data);
                             alert("Error occured during image upload: " + data.msg);
@@ -134,8 +168,17 @@
                 $.each($(this).serializeArray(), function(i, field) {
                     formData[field.name] = field.value;
                 })
+                // Format the date before sending
+                var selectedDate = new Date($('#date').val());
+                var formattedDate = selectedDate.toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                }).split(' ').join('-');
+
+                formData.date = formattedDate;
                 $.ajax({
-                    url: '/create-post',
+                    url: '/Blog/DashBoard/create-blog',
                     type: "POST",
                     data: formData,
                     success: function(data) {
@@ -147,6 +190,7 @@
                             var socket = io();
                             socket.emit("new_post", formData);
                         } else {
+                            console.log(data);
                             alert("Error : " + data.msg);
                         }
                     }
@@ -155,5 +199,5 @@
         });
     </script>
 
-<%- include('../../Mentoring/mentors-footer1.ejs') %>
-<%- include('./dashboard-footer2.ejs') %>
+    <%- include('../../Mentoring/mentors-footer1.ejs') %>
+        <%- include('./dashboard-footer2.ejs') %>

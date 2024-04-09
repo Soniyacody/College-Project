@@ -4,6 +4,16 @@ const postSchema= mongoose.Schema({
         type:String,
         required:true
     },
+    user_id:{
+        type:String,
+        required:true
+    },
+    date:{
+        type:String,
+    },
+    time:{
+        type:String
+    },
     blog_tag:{
         // Extra added 
         type:String,

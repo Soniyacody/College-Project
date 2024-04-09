@@ -102,6 +102,11 @@
   justify-content: start;
   align-items: center;
 }
+.flexbox-end{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
 .centered{
   text-align: center;
 }

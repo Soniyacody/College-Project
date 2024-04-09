@@ -97,7 +97,8 @@ const dashboard = async (req, res) => {
 };
 const loadPostDashboard = async (req, res) => {
   try {
-    res.render("Blog/DashBoard/create-blog");
+    const user_id=req.session.user_id;
+    res.render("Blog/DashBoard/create-blog",{user_id:user_id});
   } catch (error) {
     console.log(error.message);
   }
@@ -111,7 +112,10 @@ const addPost = async (req, res) => {
     }
     const post = new Post({
       title: req.body.title,
+      user_id:req.body.user_id,
       content: req.body.content,
+      date:req.body.date,
+      time:req.body.time,
       image: image,
       blog_tag:req.body.blog_tag
     });

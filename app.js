@@ -36,9 +36,9 @@ app.get('/Mentoring/schedule-timing', (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Starting server at ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Starting server at ${port}`);
+// });
 
 
 //Side project wala code
@@ -157,9 +157,9 @@ io.on("connection", function (socket) {
   });
 });
 
-// http.listen(3000, function () {
-//   console.log("Server is running on port 3000");
-// });
+http.listen(4000, function () {
+  console.log("Server is running on port 4000");
+});
 
 //Extra 
 // Define a route to render the "mentor1.ejs" template
