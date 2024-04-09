@@ -1,0 +1,159 @@
+<%- include('../../Layouts/header') %>
+    <div class="mentor-dash-cnt flexbox-even top-bottom_margin2">
+        <div class="dash">
+            <%- include('./dash-leftside.ejs') %>
+        </div>
+        <div class="mentor-dashboard-content dash-other-cnt">
+            <div class="dashboard-widget flex-x">
+                <div class="dash-widget-box flexbox-start pad-1" id="dash-box1">
+                    <i class="fa-solid fa-heart pad-1"></i>
+                    <div class="widget-info font1">
+                        <h4 class="heading">23</h4>
+                        <h5>Likes</h5>
+                    </div>
+                </div>
+                <div class="dash-widget-box flexbox-start pad-1" id="dash-box2">
+                    <i class="fa-solid fa-eye pad-1"></i>
+                    <div class="widget-info font1">
+                        <h4 class="heading">33</h4>
+                        <h5>Total Reads</h5>
+                    </div>
+                </div>
+                <div class="dash-widget-box flexbox-start pad-1" id="dash-box3">
+                    <i class="fas fa-wallet pad-1"></i>
+                    <div class="widget-info font1">
+                        <h4 class="heading">$14</h4>
+                        <h5>Total Post</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="mentee-list">
+                <h3 class="heading pad-1">Create Blog </h3>
+                <hr>
+               <div class="create-blog">
+                    <form action="/Blog/DashBoard/create-blog" method="post" enctype="multipart/form-data">
+                        <div class="p-1  flex-column  font1 left-margin1">
+                            <h3 class="heading_lite font1 pad-1"><i>Title</i></h3>
+                            <input type="text" name="title" class="pad-1 input_field" placeholder="Enter Blog Title">
+                        </div>
+                        <div class="p-1  flex-column  font1 left-margin1">
+                            <h3 class="heading_lite font1 pad-1"><i>Tag</i></h3>
+                            <select class="input_field" name="blog_tag">
+                                <option>Select Tag</option>
+                                <option>Anxiety</option>
+                                <option>Depression</option>
+                                <option>Self-Care</option>
+                                <option>Mindfulness</option>
+                                <option>Positive Psychology</option>
+                                <option>Relationships and Communication</option>
+                                <option>Inspirational Stories</option>
+                                <option>Mental Health Awareness</option>
+                               
+                            </select>
+                        </div>
+                        
+                        <div class="p-1  flex-column  font1 left-margin1">
+                            <h3 class="heading_lite font1 pad-1"><i>Image</i></h3>
+                            <button type="button" class="btn btn-primary mt-1" data-toggle="modal"
+                            data-target="#uploadModal">
+                            Upload Image
+                        </button>
+                        <input type="hidden" name="image" id="image">
+                        </div>
+                        <div class="p-1  flex-column  font1 left-margin1">
+                            <h3 class="heading_lite font1 pad-1"><i>Content</i></h3>
+                            <textarea  name="content" class="pad-1 input_field" placeholder="Enter Blog Content"></textarea>
+                        </div>
+                        <div class="p-1  flex-column  font1 left-margin1">
+                            <input type="submit" value="Add Post" class="btn btn-primary mt-3">
+
+                            <h3 class="heading_lite font1 pad-1"><i>Title</i></h3>
+                            <input type="text" name="title" class="pad-1 input_field" placeholder="Enter Blog Title">
+                        </div>
+                    </form>
+               </div>
+               <% if(typeof message!=='undefined' ){ %>
+                <p style="color:green;">
+                    <%= message %>
+                </p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Upload </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="file" name="image" id="image" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#uploadForm').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: '/upload-post-image',
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        console.log(data);
+                        if (data.success == true) {
+                            $('#image').val(data.path);
+                            alert(data.msg);
+                            $('#uploadModal').modal('hide');
+                        } else {
+                            console.log(data);
+                            alert("Error occured during image upload: " + data.msg);
+                        }
+
+                    }
+                });
+            });
+            $('#addPost').submit(function(event) {
+                event.preventDefault();
+                var obj = $(this);
+                var formData = {};
+                $.each($(this).serializeArray(), function(i, field) {
+                    formData[field.name] = field.value;
+                })
+                $.ajax({
+                    url: '/create-post',
+                    type: "POST",
+                    data: formData,
+                    success: function(data) {
+                        if (data.success == true) {
+                            alert(data.msg);
+                            $(obj)[0].reset();
+                            $('#image').val('');
+                            formData._id = data._id;
+                            var socket = io();
+                            socket.emit("new_post", formData);
+                        } else {
+                            alert("Error : " + data.msg);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+<%- include('../../Mentoring/mentors-footer1.ejs') %>
+<%- include('./dashboard-footer2.ejs') %>

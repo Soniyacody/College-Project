@@ -34,9 +34,9 @@ const adminController=require('../controller/adminController');
 admin_route.get('/LoginForm/register',adminController.blogSetup);
 admin_route.post('/LoginForm/register',upload.single('user_logo'),adminController.blogSetupSave);
 
-admin_route.get('/dashboard',adminLoginAuth.isLogin,adminController.dashboard);
-admin_route.get('/create-post',adminLoginAuth.isLogin,adminController.loadPostDashboard);
-admin_route.post('/create-post',adminLoginAuth.isLogin,adminController.addPost);
+admin_route.get('/Blog/DashBoard/blogDashboard',adminLoginAuth.isLogin,adminController.dashboard);
+admin_route.get('/Blog/DashBoard/create-blog',adminLoginAuth.isLogin,adminController.loadPostDashboard);
+admin_route.post('/Blog/DashBoard/create-blog',adminLoginAuth.isLogin,adminController.addPost);
 admin_route.post('/upload-post-image',upload.single('image'),adminLoginAuth.isLogin,adminController.uploadPostImage);
 admin_route.post('/delete-post',adminLoginAuth.isLogin,adminController.deletePost);
 

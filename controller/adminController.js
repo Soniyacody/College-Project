@@ -90,14 +90,14 @@ const blogSetupSave = async (req, res) => {
 const dashboard = async (req, res) => {
   try {
     const allPosts = await Post.find({});
-    res.render("admin/dashboard", { posts: allPosts });
+    res.render("Blog/DashBoard/blogDashboard", { posts: allPosts });
   } catch (error) {
     console.log(error.message);
   }
 };
 const loadPostDashboard = async (req, res) => {
   try {
-    res.render("admin/postDashboard");
+    res.render("Blog/DashBoard/create-blog");
   } catch (error) {
     console.log(error.message);
   }

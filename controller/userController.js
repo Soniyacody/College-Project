@@ -52,7 +52,6 @@ const verifyLogin = async (req, res) => {
     const userData = await User.findOne({ email: email });
     
     if (userData) {
-      console.log(userData);
       const passwordMatch = await bcrypt.compare(password, userData.password);
       if (passwordMatch) {
         
@@ -60,7 +59,7 @@ const verifyLogin = async (req, res) => {
         req.session.is_admin = userData.is_admin;
         res.cookie(`user`,JSON.stringify(userData));
         if (userData.is_admin == 1) {
-          res.redirect("/");
+          res.redirect("/Blog/DashBoard/blogDashboard");
         } else {
           res.redirect("/profile");
         }
